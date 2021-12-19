@@ -14,7 +14,7 @@ document.querySelector('.btn-a').addEventListener('click', function () {
     }
 })
 
-document.querySelectorAll('.btn-outline-danger').forEach(button => {
+document.querySelectorAll('.item-btn').forEach(button => {
     button.addEventListener('click', function () {
         document.querySelector('#item-modal-title').textContent = `${(this.id).toUpperCase()} added to Cart.`;
         document.querySelector('#item-modal-body').textContent = `${(this.id).toUpperCase()} successfully added to cart! Please continue your shopping.`;
