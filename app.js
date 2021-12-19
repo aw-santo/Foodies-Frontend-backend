@@ -11,28 +11,28 @@ const app = express();
 const port = 80;
 
 // Start MongoD in Powershell and connect it to our localhost
-mongoose.connect("mongodb://localhost:27017/ContactDataDB", {
-    useUnifiedTopology: true,
-    useNewUrlParser: true
-});
+// mongoose.connect("mongodb://localhost:27017/ContactDataDB", {
+//     useUnifiedTopology: true,
+//     useNewUrlParser: true
+// });
 
-// If connection is successfull display some message
-var db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function () {
-    console.log("Connection Successful!");
-});
+// // If connection is successfull display some message
+// var db = mongoose.connection;
+// db.on("error", console.error.bind(console, "connection error:"));
+// db.once("open", function () {
+//     console.log("Connection Successful!");
+// });
 
-// Create an Schema for the Database
-const contactSchema = new mongoose.Schema({
-    name: String,
-    contact: String,
-    email: String,
-    message: String
-});
+// // Create an Schema for the Database
+// const contactSchema = new mongoose.Schema({
+//     name: String,
+//     contact: String,
+//     email: String,
+//     message: String
+// });
 
-// Compile that Schema into Model
-const Contact = mongoose.model('Contact', contactSchema, 'contactMessages');
+// // Compile that Schema into Model
+// const Contact = mongoose.model('Contact', contactSchema, 'contactMessages');
 
 // Define Static
 app.use('/static', express.static('static'));
@@ -62,6 +62,14 @@ app.get('/home', (req, res) => {
 
 app.get('/groceries', (req, res) => {
     res.status(200).sendFile(path.join(__dirname, 'views/groceries.html'))
+});
+
+app.get('/fruits', (req, res) => {
+    res.status(200).sendFile(path.join(__dirname, 'views/fruits.html'))
+});
+
+app.get('/vegetables', (req, res) => {
+    res.status(200).sendFile(path.join(__dirname, 'views/vegetables.html'))
 });
 
 app.get('/contact', (req, res) => {
