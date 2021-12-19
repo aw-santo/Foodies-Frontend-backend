@@ -1,0 +1,21 @@
+{
+  "name": "ecommerce-website",
+  "version": "1.0.0",
+  "description": "An Ecommerce Website.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Onkar, Sanket, Amaan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "googleapis": "^92.0.0",
+    "mongoose": "^6.1.2",
+    "nodemailer": "^6.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
