@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Groceries at Foodies | Fresh & Best groceries in City</title>
+
+    <link rel="shortcut icon" href="../static/images/home/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <!-- Bootstrap Components -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <!-- Internal JavaScript -->
+    <script src="/static/javascript/flash_message.js" defer></script>
+    <script src="/static/javascript/item_cart.js" defer></script>
+
+    <!-- Internal CSS -->
+    <link rel="stylesheet" href="../static/css/groceries.css" />
+    <link rel="stylesheet" media="screen and (max-width: 1170px)" href="../static/css/groceries-phone.css" />
+
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="cart-modal-title" id="buyModalLabel">Cart Buy</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="cart-modal-body" class="modal-body">
+                    <p class="first">Buy All Items in the Cart?</p>
+                    <p class="second">Buy All Items in the Cart?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Buy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="item-modal-title" class="modal-title" id="cartModalLabel">Item Added to Cart.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="item-modal-body" class="modal-body">
+                    Item successfully added to cart!
+                    Please continue your shopping.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav id="navbar">
+        <div id="logo">
+            <img src="../static/images/logos/logos.jpg" alt="MyOnlineMeal.com" />
+        </div>
+        <ul>
+            <li class="item"><a href="/home">Home</a></li>
+            <li class="item"><a href="/home#services-container">Services</a></li>
+            <li class="item"><a href="/home#contact">Contact Us</a></li>
+            <li class="item"><a href="/signup">Sign up</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1 class="h-primary">Welcome to MyOnlineVegies</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis
+            dolorum numquam minus.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        <button class="btn-a" data-toggle="modal" data-target="#buyModal">Buy Items in Cart</button>
+    </section>
+
+
+    <section id="order-content">
+        <h1 class="order-heading center">Pick your items</h1>
+        <div id="orders">
+            <div class="box">
+                <img src="/static/images/grocery/almond.jpg" alt="Almond.logo" />
+                <h2 class="order-heading-secondary">Almond</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="price_block">
+                    <span class="currency_icon">&#8377;</span>
+                    <span class="amount">60 per kg</span>
+                </div>
+                <div class="btn-container">
+                    <button id="almond" value="60" class="btn item-btn btn-outline-info" data-toggle="modal"
+                        data-target="#cartModal">Add to
+                        Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="/static/images/grocery/brown-rice.jpg" alt="Brown-Rice.logo" />
+                <h2 class="order-heading-secondary">Brown-Rice</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="price_block">
+                    <span class="currency_icon">&#8377;</span>
+                    <span class="amount">40 per kg</span>
+                </div>
+                <div class="btn-container">
+                    <button id="brown-rice" value="40" class="btn item-btn btn-outline-info" data-toggle="modal"
+                        data-target="#cartModal">Add to
+                        Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="/static/images/grocery/butter.jpg" alt="Butter.logo" />
+                <h2 class="order-heading-secondary">Butter</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="price_block">
+                    <span class="currency_icon">&#8377;</span>
+                    <span class="amount">10 per piece</span>
+                </div>
+                <div class="btn-container">
+                    <button id="butter" value="10" class="btn item-btn btn-outline-info" data-toggle="modal"
+                        data-target="#cartModal">Add to
+                        Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="/static/images/grocery/cheese.jpg" alt="Cheese.logo" />
+                <h2 class="order-heading-secondary">Cheese</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="price_block">
+                    <span class="currency_icon">&#8377;</span>
+                    <span class="amount">10 per piece</span>
+                </div>
+                <div class="btn-container">
+                    <button id="cheese" value="10" class="btn item-btn btn-outline-info" data-toggle="modal"
+                        data-target="#cartModal">Add to
+                        Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="/static/images/grocery/cashews.jpg" alt="Cashew.logo" />
+                <h2 class="order-heading-secondary">Cashew</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="price_block">
+                    <span class="currency_icon">&#8377;</span>
+                    <span class="amount">12 per dozen</span>
+                </div>
+                <div class="btn-container">
+                    <button id="cashew" value="12" class="btn item-btn btn-outline-info" data-toggle="modal"
+                        data-target="#cartModal">Add to
+                        Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="/static/images/grocery/bread.jpg" alt="Bread.logo" />
+                <h2 class="order-heading-secondary">Bread</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="price_block">
+                    <span class="currency_icon">&#8377;</span>
+                    <span class="amount">40 per kg</span>
+                </div>
+                <div class="btn-container">
+                    <button id="bread" value="40" class="btn item-btn btn-outline-info" data-toggle="modal"
+                        data-target="#cartModal">Add to
+                        Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="/static/images/grocery/egg.jpg" alt="Eggs.logo" />
+                <h2 class="order-heading-secondary">Eggs</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="price_block">
+                    <span class="currency_icon">&#8377;</span>
+                    <span class="amount">80 per kg</span>
+                </div>
+                <div class="btn-container">
+                    <button id="egg" value="80" class="btn item-btn btn-outline-info" data-toggle="modal"
+                        data-target="#cartModal">Add to
+                        Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="/static/images/grocery/wheat.jpg" alt="Wheat.logo" />
+                <h2 class="order-heading-secondary">Wheat</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="price_block">
+                    <span class="currency_icon">&#8377;</span>
+                    <span class="amount">35 per kg</span>
+                </div>
+                <div class="btn-container">
+                    <button id="wheat" value="35" class="btn item-btn btn-outline-info" data-toggle="modal"
+                        data-target="#cartModal">Add to
+                        Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="/static/images/grocery/chocklate.jpg" alt="Tomato.logo" />
+                <h2 class="order-heading-secondary">Chocolate</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="price_block">
+                    <span class="currency_icon">&#8377;</span>
+                    <span class="amount">80 per kg</span>
+                </div>
+                <div class="btn-container">
+                    <button id="chocklate" value="80" class="btn item-btn btn-outline-info" data-toggle="modal"
+                        data-target="#cartModal">Add to
+                        Cart</button>
+                </div>
+            </div>
+
+
+    </section>
+
+    <section class="footer">
+        <h1 class="credit">created by <span>Foodies</span> |&copy; all rights reserved.</h1>
+        <div class="icons">
+            <a href="https://hi-in.facebook.com/sanket.ghormode.31" target="_blank" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/aw_santo" target="_blank" class="fab fa-twitter"></a>
+            <a href="https://www.instagram.com/aman_khan0_o/" target="_blank" class="fab fa-instagram"></a>
+            <a href="https://github.com/VyavahareOnkar" target="_blank" class="fab fa-github"></a>
+            <a href="https://www.linkedin.com/in/onkar-vyavahare-7a42ba1a5/" target="_blank"
+                class="fab fa-linkedin"></a>
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
